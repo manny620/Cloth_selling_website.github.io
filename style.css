@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Neonderthaw&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Yesteryear&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display" , "serif";
+    /* font-family: "poppins" , "serif"; */
+}
+
+/* base rule  */
+:root{
+    --common-text-color:  rgb(75, 73, 73);
+    --salt-color:rgb(156, 54, 54);
+    
+}
+html{
+    font-size: 62.5%;
+    /* 1rem=10px */
+}
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+.grid{
+    display: grid;
+}
+/* End base rule */
+
+/* reuse code  */
+a, li{
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--common-text-color);
+}
+h2{
+    font-size: 2.5rem;
+}
+p{
+    font-size: 1.5rem;
+}
+.section-common-heading{
+    font-size: 3rem;
+    color: var(--common-text-color);
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+.section-common-para{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+}
+.price-tag{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.grid-two--cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-three--cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-four--cols{
+    grid-template-columns: repeat(4, 1fr);
+}
+/* End of reuse code  */
+
+/* theme code  */
+/* End of theme code  */
+
+/* layout code  */
+/* End of layout code  */
+
+/* section nav code */
+.section-nav .container{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.section-nav .container .logo img{
+    width: 25%;
+    height: auto;
+}
+.section-nav .container .nav-items ul{
+    display: flex;
+    gap: 3.2rem;
+    font-size: 1.8rem;
+}
+.section-nav .container .nav-items ul li a{
+    display: inline-block;
+    font-weight: 600;
+    position: relative; 
+
+    &:hover{
+        color: var(--common-text-color);
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        border-bottom: 2px solid var(--common-text-color);
+        width: 0;
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        bottom: -0.1rem;
+}
+    &:hover::after{
+        width: 100%;
+    }
+}
+/* End of section nav code  */
+
+/* section hero  */
+.section-hero{
+    background-image:linear-gradient(to left, #89f7fe 0%, #82b6ff 100%);
+    border-radius: 150px 0px 250px 0px;
+    -webkit-border-radius: 150px 0px 250px 0px;
+    -moz-border-radius: 150px 0px 250px 0px;
+    -ms-border-radius: 150px 0px 250px 0px;
+    -o-border-radius: 150px 0px 250px 0px;
+}
+.section-hero .grid{
+    align-items: center;
+}
+.section-hero-content{
+    padding: 2rem 0 1rem 2rem;
+}
+.section-hero-subtitle{
+    font-size: 2.5rem;
+    color: var(--common-text-color);
+    padding-bottom: 2rem;
+    font-weight: 500;
+}
+.section-hero-title{
+    font-size: 4rem;
+    color: var(--salt-color);
+}
+.section-hero-para{
+    font-size: 1.8rem;
+    padding-top: 2rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.5rem;
+}
+.section-hero-image figure img{
+    padding-left: 20rem;
+    width: 80%;
+    height: auto;
+}
+/* End of section hero  */
+
+/* product collections  */
+.product{
+    padding: 2rem 1rem 2rem 1rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.product:hover{
+    box-shadow: 0px 0px 10px 2px rgb(197, 197, 255);
+}
+.section-collection .grid{
+    gap: 4rem;
+}
+.product-image{
+    width: 90%;
+    position: relative;
+    padding-bottom: 1rem;
+}
+.product .section-common-para{
+    padding-left: 0.5rem;
+}
+.price-tag{
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.5rem 0rem 0 0.5rem;
+
+    & .fa-indian-rupee-sign{
+        font-size: 1.2rem;
+    }
+}
+/* end product collections  */
+
+/* section footer  */
+footer{
+    background-color: #484b4e;
+    color: white;
+    padding: 5rem 2rem 5rem 2rem;
+}
+.logo img{
+    width: 60%;
+    height: auto;
+}
+.logo i{
+    font-size: 2.5rem;
+    padding: 1rem 0.8rem 0 0;
+}
+
+/* End section footer  */
+
+/* media query container size 1000px */
+@media (width>=1300px){
+    .container{
+        max-width: 120rem;
+    }
+}
+@media (width <=1150px){
+    .container{
+        max-width: 110rem;
+    }
+    html{
+        font-size: 50%;
+        /* 1rem= 8px */
+    }
+}
+
+@media (width <= 960px){
+    .container{
+        max-width: 90rem;
+    }
+    .section-nav .container .logo img{
+        width: 40%;
+    }
+    .section-hero-image figure img{
+        width: 90%;
+        padding-right: 2rem;
+    }
+
+}
+@media (width <=800px){
+    .container{
+        max-width: 70rem;
+    }
+
+    .grid-two--cols{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-four--cols{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .section-nav .container{
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+    }
+    .section-nav .container .logo img{
+        width: 35%;
+        height: auto;
+    }
+    .nav-items ul li{
+        padding-top: 2rem;
+    }
+    .section-hero-content{
+        order: 2;
+        padding-left: 6rem;
+        padding-bottom: 6rem;
+    }
+    .section-hero-image figure img{
+        width: 75%;
+    }
+}
+@media (width <= 550px){
+    .container{
+        width: 40rem;
+    }
+    html{
+        font-size: 43.75%;
+        /* 1rem= 7px  */
+    }
+    .section-hero-image figure img{
+        width: 80%;
+    }
+    .section-hero-image figure img{
+        padding: 0;
+    }
+    .section-hero-content{
+        padding: 0 2rem 8rem 0;
+    }
+    .section-collection .container{
+        width: 60rem;
+    }
+    .section-collection .grid-four--cols{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    footer .container{
+        width: 50rem;
+    }
+    footer .grid-three--cols{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+
+}
